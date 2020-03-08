@@ -3,17 +3,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
-import HomeScreen from './screens/Home';
+import ProductList from './screens/ProductList';
+import ProductDetails from './screens/ProductDetails';
 
 
 const Stack = createStackNavigator();
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+export default () => (
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="ProductList" component={ProductList} />
+      <Stack.Screen name="ProductDetails" component={ProductDetails} />
+    </Stack.Navigator>
+  </NavigationContainer>
+);
