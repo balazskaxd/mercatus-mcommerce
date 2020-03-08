@@ -3,11 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
-import ProductList from './screens/ProductList';
-import ProductDetails from './screens/ProductDetails';
-
+import ProductList from './screens/ProductList/ProductList';
+import ProductDetails from './screens/ProductDetails/ProductDetails';
 
 const Stack = createStackNavigator();
+
 
 export default () => (
   <NavigationContainer>
