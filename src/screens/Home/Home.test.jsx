@@ -1,7 +1,7 @@
 import 'react-native';
 import renderer from 'react-test-renderer';
 import React from 'react';
-import ProductList from './ProductList';
+import Home from './Home';
 
 const props = {
   navigation: {
@@ -9,6 +9,6 @@ const props = {
   },
 };
 
-it('ProductList renders correctly', () => {
-  renderer.create(<ProductList navigation={props.navigation} />);
+it('Home renders correctly', () => {
+  renderer.create(<Home navigation={props.navigation} />);
 });
