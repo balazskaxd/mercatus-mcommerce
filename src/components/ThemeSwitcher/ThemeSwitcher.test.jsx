@@ -1,4 +1,4 @@
-import { Picker } from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
 import renderer from 'react-test-renderer';
 import React from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -13,16 +13,14 @@ describe('ThemeSwitcher', () => {
   it('ThemeSwitcher renders correctly', () => {
     renderer.create(
       <ThemeSwitcher isDarkMode={props.isDarkMode} onChange={props.onChange} />,
-    ).toJSON();
+    );
   });
-
 
   it('test onChange functionality', () => {
     const wrapper = renderer.create(
       <ThemeSwitcher isDarkMode={props.isDarkMode} onChange={props.onChange} />,
     );
-
-    wrapper.root.findByType(Picker).props.onValueChange();
+    wrapper.root.findByType(RNPickerSelect).props.onValueChange();
     expect(props.onChange).toHaveBeenCalledTimes(1);
   });
 });

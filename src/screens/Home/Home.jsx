@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet } from 'react-native';
+import { SafeAreaView, View, StyleSheet } from 'react-native';
 import { ThemeProvider } from '../../ThemeContext';
 import ThemeSwitcher from '../../components/ThemeSwitcher/ThemeSwitcher';
 import HomeMenu from '../../components/HomeMenu/HomeMenu';
@@ -28,15 +28,17 @@ const Home = ({ navigation }) => {
 
   return (
     <ThemeProvider value={isDarkMode}>
-      <View
-        style={{
-          ...styles.pageContainer,
-          backgroundColor: isDarkMode ? COLORS.tolopea : COLORS.kleinBlue,
-        }}
-      >
-        <ThemeSwitcher isDarkMode={isDarkMode} onChange={setDarkMode} />
-        <HomeMenu navigation={navigation} />
-      </View>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View
+          style={{
+            ...styles.pageContainer,
+            backgroundColor: isDarkMode ? COLORS.tolopea : COLORS.kleinBlue,
+          }}
+        >
+          <ThemeSwitcher isDarkMode={isDarkMode} onChange={setDarkMode} />
+          <HomeMenu navigation={navigation} />
+        </View>
+      </SafeAreaView>
     </ThemeProvider>
   );
 };
