@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-  ActivityIndicator, Text, TouchableOpacity, View,
-} from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import { getProductList } from '../../action/productsActions';
+import ProductCard from '../../components/ProductCard/ProductCard';
 import COLORS from '../../styles/colors';
 
 
@@ -18,15 +17,7 @@ export class ProductList extends React.Component {
     const { navigation, products } = this.props;
 
     return (
-      <TouchableOpacity
-        style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-        onPress={() => {
-          navigation.navigate('ProductDetails', {
-            itemId: 86,
-            otherParam: 'anything you want here',
-          });
-        }}
-      >
+      <View style={{ flex: 1 }}>
         {
           !products
           && (
@@ -36,12 +27,10 @@ export class ProductList extends React.Component {
 
         {
           products && products.map((product) => (
-            <View key={product.id}>
-              <Text>{product.title}</Text>
-            </View>
+            <ProductCard key={product.id} product={product} navigate={navigation.navigate} />
           ))
         }
-      </TouchableOpacity>
+      </View>
     );
   }
 }

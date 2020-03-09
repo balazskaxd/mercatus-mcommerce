@@ -5,13 +5,11 @@ import { Button, Text, View } from 'react-native';
 
 const ProductDetails = ({ route, navigation }) => {
   const { itemId } = route.params;
-  const { otherParam } = route.params;
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>ProductDetails Screen</Text>
       <Text>{`itemId: ${JSON.stringify(itemId)}`}</Text>
-      <Text>{`otherParam: ${JSON.stringify(otherParam)}`}</Text>
       <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
   );
