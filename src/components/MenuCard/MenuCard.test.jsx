@@ -11,10 +11,9 @@ describe('MenuCard', () => {
   };
 
   it('MenuCard renders correctly', () => {
-    const tree = renderer.create(
+    renderer.create(
       <MenuCard title={props.title} navigate={props.navigate} />,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
   });
 
   it('renders the correct text', () => {
