@@ -5,9 +5,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import store from './store';
 
 // Screens
-import Home from './screens/Home/Home';
-import ProductList from './screens/ProductList/ProductList';
-import ProductDetails from './screens/ProductDetails/ProductDetails';
+import HomeScreen from './screens/Home/Home';
+import ProductListScreen from './screens/ProductList/ProductList';
+import ProductDetailsScreen from './screens/ProductDetails/ProductDetails';
+import CartScreen from './screens/Cart/Cart';
 
 const Stack = createStackNavigator();
 
@@ -16,9 +17,10 @@ export default () => (
   <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="ProductList" component={ProductList} options={{ title: 'Products' }} />
-        <Stack.Screen name="ProductDetails" component={ProductDetails} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ProductList" component={ProductListScreen} options={{ title: 'Products' }} />
+        <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
+        <Stack.Screen name="Cart" component={CartScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   </Provider>

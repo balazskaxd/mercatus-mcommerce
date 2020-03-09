@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
 
 const menuItems = [
   { key: 1, title: 'Shop', screen: 'ProductList' },
+  { key: 2, title: 'Cart', screen: 'Cart' },
 ];
 
 const HomeMenu = ({ navigation }) => (
